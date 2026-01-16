@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我介绍 | GitHub Pages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid #4a6fa5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #4a6fa5;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #4a6fa5;
+            display: inline-block;
+        }
+        
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .card li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #4a6fa5;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: #4a6fa5;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s ease;
+            width: 80px;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-5px);
+            color: #4a6fa5;
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #4a6fa5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .github-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #24292e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .github-link:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar-container">
+                <!-- 这里使用占位头像，您可以将src替换为自己的头像 -->
+                <img class="avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="个人头像">
+            </div>
+            <h1>王小明</h1>
+            <div class="subtitle">前端开发者 | UI/UX设计师</div>
+            <p class="intro-text">
+                你好！我是一名充满热情的前端开发者，拥有5年Web开发经验。我喜欢创造美观、易用且高效的Web应用。目前专注于React和Vue.js生态，同时对用户体验设计有浓厚兴趣。我相信好的设计能够改善人们的生活。
+            </p>
+        </header>
+        
+        <div class="main-content">
+            <div class="card">
+                <h2>关于我</h2>
+                <ul>
+                    <li><i class="fas fa-user-graduate"></i> <strong>教育背景：</strong> 计算机科学硕士，XX大学</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>所在地：</strong> 北京，中国</li>
+                    <li><i class="fas fa-briefcase"></i> <strong>职业：</strong> 高级前端工程师</li>
+                    <li><i class="fas fa-language"></i> <strong>语言：</strong> 中文(母语), 英语(流利)</li>
+                    <li><i class="fas fa-heart"></i> <strong>兴趣：</strong> 编程，摄影，旅行，阅读</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>技能专长</h2>
+                <p>以下是我掌握的主要技术栈：</p>
+                <div class="skills-container">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">UI/UX设计</span>
+                    <span class="skill-tag">响应式设计</span>
+                    <span class="skill-tag">Web性能优化</span>
+                </div>
+                
+                <h2 style="margin-top: 30px;">项目经验</h2>
+                <ul>
+                    <li><i class="fas fa-code"></i> <strong>电商平台前端重构</strong> - 使用Vue.js重构，性能提升40%</li>
+                    <li><i class="fas fa-code"></i> <strong>企业级后台管理系统</strong> - 基于React和Ant Design</li>
+                    <li><i class="fas fa-code"></i> <strong>移动端H5活动页面</strong> - 适配多种移动设备</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>联系我</h2>
+            <div class="contact-links">
+                <a href="mailto:example@example.com" class="contact-link">
+                    <div class="icon-circle">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span>邮箱</span>
+                </a>
+                
+                <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                    <div class="icon-circle">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span>GitHub</span>
+                </a>
+                
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+                    <div class="icon-circle">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+                
+                <a href="https://twitter.com/yourprofile" target="_blank" class="contact-link">
+                    <div class="icon-circle">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <span>Twitter</span>
+                </a>
+                
+                <a href="https://blog.yourdomain.com" target="_blank" class="contact-link">
+                    <div class="icon-circle">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <span>个人博客</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="github-info">
+            <p>这个自我介绍页面已部署在GitHub Pages上。</p>
+            <p>如果您想查看源代码或创建类似页面，请访问：</p>
+            <a href="https://github.com/yourusername/your-repo" class="github-link" target="_blank">
+                <i class="fab fa-github"></i> 查看GitHub仓库
+            </a>
+        </div>
+        
+        <footer>
+            <p>© <span id="current-year"></span> 王小明 - 本页面使用HTML/CSS/JavaScript构建</p>
+            <p>最后更新: <span id="current-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // 设置当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // 设置当前日期
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = now.toLocaleDateString('zh-CN', options);
+        
+        // 简单交互效果 - 点击技能标签时显示提示
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const skillName = this.textContent;
+                alert(`您点击了技能: ${skillName}`);
+            });
+        });
+        
+        // 头像悬停效果
+        const avatar = document.querySelector('.avatar-container');
+        avatar.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        avatar.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

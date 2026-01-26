@@ -1,0 +1,1 @@
+因为我是50系NVIDIA显卡 配置环境查pytorch cuda anaconda python yolo 版本兼容性折腾了很久
